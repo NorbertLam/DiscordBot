@@ -7,7 +7,6 @@ const bot = new Discord.Client();
 const token = require('./config/local.json').token;
 
 bot.on("message", msg => {
-
   let prefix = "!";
 
   var name = msg.content.slice(msg.content.indexOf(" ") + 1);
@@ -157,7 +156,6 @@ bot.on("message", msg => {
 });
 
 function setUpCards(response, name1, msg) {
-
   var card = response.data.data;
   var link = card.name.replace(" ", "+")
 
@@ -190,7 +188,6 @@ function setUpCards(response, name1, msg) {
 };
 
 function setUp(response, name1, msg) {
-
   var list = response.data.response.sell;
   var sell = [];
 
@@ -198,7 +195,7 @@ function setUp(response, name1, msg) {
     if (list[i].online_ingame == true) {
       sell.push(list[i]);
     }
-  }
+  }P
   sell.sort(function(a, b) {
     return parseInt(a.price) - parseInt(b.price);
   });
@@ -215,7 +212,6 @@ function setUp(response, name1, msg) {
 };
 
 function setUpMod(response, name1, msg) {
-
   var list = response.data.response.sell;
   var sell = [];
 
@@ -241,7 +237,6 @@ function setUpMod(response, name1, msg) {
 };
 
 function errMsg(name, msg) {
-
   msg.channel.sendMessage("```" +
     "Cannot find " + name + "\n" +
     "Have you spelled the name correctly?\n" +
