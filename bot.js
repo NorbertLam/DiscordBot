@@ -17,9 +17,7 @@ bot.on("message", msg => {
   if (msg.content.startsWith(prefix + "card")) {
     axios.get('http://yugiohprices.com/api/card_data/' + name1)
       .then(function(response) {
-
         setUpCards(response, name1, msg);
-
       })
       .catch(function(error) {
         errMsg(name, msg);
@@ -34,11 +32,8 @@ bot.on("message", msg => {
     }
     axios.get('http://warframe.market/api/get_orders/Blueprint/' + name1)
       .then(function(response) {
-
         setUp(response, name1, msg);
-
       })
-
       .catch(function(error) {
         errMsg(name, msg);
       });
@@ -55,11 +50,8 @@ bot.on("message", msg => {
     }
     axios.get(point3 + name1)
       .then(function(response) {
-
         setUpMod(response, name1, msg);
-
       })
-
       .catch(function(error) {
         errMsg(name, msg);
       });
@@ -68,11 +60,8 @@ bot.on("message", msg => {
   if (msg.content.startsWith(prefix + "wset")) {
     axios.get('http://warframe.market/api/get_orders/Set/' + name1 + " Set")
       .then(function(response) {
-
         setUp(response, name1, msg);
-
       })
-
       .catch(function(error) {
         errMsg(name, msg);
       });
