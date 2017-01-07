@@ -184,7 +184,7 @@ function setUp(response, name1, msg) {
     if (list[i].online_ingame == true) {
       sell.push(list[i]);
     }
-  }P
+  }
   sell.sort(function(a, b) {
     return parseInt(a.price) - parseInt(b.price);
   });
