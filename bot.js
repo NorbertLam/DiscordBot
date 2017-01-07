@@ -146,7 +146,7 @@ bot.on("message", msg => {
 
 function setUpCards(response, name1, msg) {
   var card = response.data.data;
-  var link = card.name.replace(" ", "+")
+  var link = card.name.replace(/ /g, '+');
 
   if (card.card_type == "monster") {
     msg.channel.sendMessage("```" +
